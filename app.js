@@ -247,8 +247,13 @@ function closeModal() {
 window.playMusicSound = function() {
     // 무료 샘플 사운드 URL (짧은 비프음 또는 음악 효과음)
     const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-3.mp3');
-    audio.play().catch(e => {
-        console.error("오디오 재생 실패:", e);
-        alert("브라우저 설정에 의해 자동 재생이 차단되었을 수 있습니다. 화면을 클릭한 후 다시 시도해주세요.");
+    
+    // 오디오 재생 시도
+    audio.play().then(() => {
+        console.log("음악 재생 중...");
+    }).catch(e => {
+        console.warn("오디오 재생이 차단되었습니다. 사용자 상호작용이 필요합니다.", e);
+        // 사용자에게 알리는 방식 변경 (alert 대신 조용한 알림 권장)
+        // 여기서는 버튼 색상을 잠시 변경하거나 콘솔에만 기록하도록 수정합니다.
     });
 };
