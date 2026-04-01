@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Music Share | 음악 추천 플랫폼</title>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- FontAwesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🎵 <span class="gradient-text">K-Music Share</span></div>
+        <nav class="nav-links">
+            <a href="#" class="active">홈</a>
+            <a href="#">탐색</a>
+            <a href="#">플레이리스트</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://i.pravatar.cc/150?img=32" alt="User Profile" class="avatar">
+            <span class="username">Guest</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero glass-panel">
+            <div class="hero-content">
+                <h1 class="hero-title">당신의 최애 <span class="gradient-text">K-팝</span>을<br>모두와 공유하세요.</h1>
+                <p class="hero-subtitle">가장 트렌디한 한국 음악부터 숨겨진 인디 명곡까지.<br>당신만의 플레이리스트를 만들고 세상과 나누어보세요.</p>
+                <button class="primary-btn">지금 바로 추천하기 <i class="fas fa-music"></i></button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-records">
+                    <div class="glow-orb"></div>
+                    <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vinyl Record" class="vinyl-art">
+                </div>
+            </div>
+        </section>
+
+        <section class="trending-section">
+            <h2 class="section-title">🔥 실시간 트렌딩 <span class="badge">Hot</span></h2>
+            <div class="category-filters" id="category-filters">
+                <button class="filter-btn active">전체</button>
+                <button class="filter-btn">아이돌</button>
+                <button class="filter-btn">인디</button>
+                <button class="filter-btn">발라드</button>
+                <button class="filter-btn">힙합/R&B</button>
+            </div>
+            <div class="music-feed" id="music-feed">
+                <!-- app.js를 통해 카드가 동적으로 주입됩니다 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo">🎵 <span class="gradient-text">K-Music Share</span></div>
+        <p style="margin-top: 1rem;">© 2026 K-Music Share. All rights reserved.</p>
+    </footer>
+
+    <!-- 포스트 상세(댓글) 모달 -->
+    <div id="post-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body" id="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
