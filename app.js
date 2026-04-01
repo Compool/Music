@@ -201,7 +201,7 @@ window.openModal = function(postId) {
                 </div>
                 
                 <div style="display:flex; gap: 1rem; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-                    <button class="primary-btn" style="flex:1; justify-content:center; border-radius: 12px; padding: 1.2rem;">
+                    <button class="primary-btn" style="flex:1; justify-content:center; border-radius: 12px; padding: 1.2rem;" onclick="playMusicSound()">
                         <i class="fas fa-play"></i> 음악 재생하기
                     </button>
                     <button class="action-btn ${isLiked ? 'liked' : ''}" style="font-size:1.3rem; background:rgba(255,255,255,0.08); padding: 0 2rem; border-radius: 12px; height: 100%;" onclick="toggleLike(${post.post_id}); setTimeout(() => openModal(${post.post_id}), 50)">
@@ -242,3 +242,13 @@ function closeModal() {
     modal.classList.remove('show');
     document.body.style.overflow = 'auto'; // Restore background scrolling
 }
+
+// Sound Playback
+window.playMusicSound = function() {
+    // 무료 샘플 사운드 URL (짧은 비프음 또는 음악 효과음)
+    const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-3.mp3');
+    audio.play().catch(e => {
+        console.error("오디오 재생 실패:", e);
+        alert("브라우저 설정에 의해 자동 재생이 차단되었을 수 있습니다. 화면을 클릭한 후 다시 시도해주세요.");
+    });
+};
